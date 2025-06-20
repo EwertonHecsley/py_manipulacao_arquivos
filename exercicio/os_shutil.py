@@ -9,8 +9,13 @@ ROOT_PATH = Path(__file__).parent
 os.mkdir(ROOT_PATH / 'novo_diretorio')
 
 #Comando para "escrever" ("W") criar um arquivo de um diretório para outro.
-arquivo = open(ROOT_PATH / 'novo_diretorio'/'novo_arquivo.txt', 'w')
-arquivo.close()
+try:
+    with open(ROOT_PATH / 'novo_diretorio' / 'arquivo.txt', 'w') as arquivo:
+        arquivo.write('Este é um arquivo criado com Python.\n')
+        arquivo.write('Estamos aprendendo a manipular arquivos e diretórios.\n')
+except IOError as err:
+        print(f'Ocorreu um erro ao criar o arquivo: {err}')    
+
 
 #Alterar nome do arquivo
-os.rename(ROOT_PATH/'novo_diretorio'/'novo_arquivo.txt', ROOT_PATH/'novo_diretorio'/'arquivo_alterado.txt')
+os.rename(ROOT_PATH/'novo_diretorio'/'arquivo.txt', ROOT_PATH/'novo_diretorio'/'arquivo_alterado.txt')
