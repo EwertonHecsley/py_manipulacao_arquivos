@@ -10,7 +10,7 @@ os.mkdir(ROOT_PATH / 'novo_diretorio')
 
 #Comando para "escrever" ("W") criar um arquivo de um diretório para outro.
 try:
-    with open(ROOT_PATH / 'novo_diretorio' / 'arquivo.txt', 'w') as arquivo:
+    with open(ROOT_PATH / 'novo_diretorio' / 'arquivo.txt', 'w',encoding='utf-8') as arquivo:
         arquivo.write('Este é um arquivo criado com Python.\n')
         arquivo.write('Estamos aprendendo a manipular arquivos e diretórios.\n')
 except IOError as err:
